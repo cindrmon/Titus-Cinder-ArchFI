@@ -287,6 +287,7 @@ then
     chown -R $username: /home/$username/ArchTitus
 	read -p "Please name your machine:" nameofmachine
 	echo $nameofmachine > /etc/hostname
+	echo "127.0.1.1		${nameofmachine}.localdomain	${nameofmachine}" >> /etc/hosts
 else
 	echo "You are already a user proceed with aur installs"
 fi
