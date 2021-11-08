@@ -32,11 +32,14 @@ fi
 echo "-------------------------------------------------"
 echo "       Setup Language to US and set locale       "
 echo "-------------------------------------------------"
+sed -i 's/^#en_PH.UTF-8 UTF-8/en_PH.UTF-8 UTF-8/' /etc/locale.gen
 sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
+sed -i 's/^#ja_JP.UTF-8 UTF-8/ja_JP.UTF-8 UTF-8/' /etc/locale.gen
+sed -i 's/^#ko_KR.UTF-8 UTF-8/ko_KR.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
-timedatectl --no-ask-password set-timezone America/Chicago
+timedatectl --no-ask-password set-timezone Asia/Manila
 timedatectl --no-ask-password set-ntp 1
-localectl --no-ask-password set-locale LANG="en_US.UTF-8" LC_TIME="en_US.UTF-8"
+localectl --no-ask-password set-locale LANG="en_PH.UTF-8" LC_TIME="en_PH.UTF-8"
 
 # Set keymaps
 localectl --no-ask-password set-keymap us
@@ -74,22 +77,19 @@ PKGS=(
 'bind'
 'binutils'
 'bison'
-'bluedevil'
-'bluez'
-'bluez-libs'
-'bluez-utils'
 'breeze'
 'breeze-gtk'
 'bridge-utils'
 'btrfs-progs'
 'celluloid' # video players
+'mpv'
 'cmatrix'
-'code' # Visual Studio code
+'asciiquarium'
+'figlet'
 'cronie'
 'cups'
 'dialog'
 'discover'
-'dolphin'
 'dosfstools'
 'dtc'
 'efibootmgr' # EFI boot
@@ -116,12 +116,14 @@ PKGS=(
 'haveged'
 'htop'
 'iptables-nft'
+'jdk11-openjdk'
 'jdk-openjdk' # Java 17
 'kate'
 'kcodecs'
 'kcoreaddons'
 'kdeplasma-addons'
 'kde-gtk-config'
+'kdenlive'
 'kinfocenter'
 'kscreen'
 'kvantum-qt5'
@@ -141,7 +143,6 @@ PKGS=(
 'm4'
 'make'
 'milou'
-'nano'
 'neofetch'
 'networkmanager'
 'ntfs-3g'
@@ -199,6 +200,46 @@ PKGS=(
 'zsh'
 'zsh-syntax-highlighting'
 'zsh-autosuggestions'
+'gpg'
+'i3-gaps'
+'i3status'
+'rofi'
+'polybar'
+'scrot'
+'feh'
+'thunar'
+'docker'
+'docker-compose'
+'pass'
+'pass-otp'
+'browserpass'
+'qtpass'
+'keepassxc'
+'qbittorrent'
+'rtorrent'
+'stow'
+'pandoc'
+'inkscape'
+'handbrake'
+'audacity'
+'nodejs'
+'yarn'
+'npm'
+'libreoffice-fresh'
+'libreoffice-extension-texmaths'
+'libreoffice-extension-writer2latex'
+'go'
+'ecryptfs-utils'
+'dino'
+'mupdf'
+'firefox'
+'browserpass-firefox'
+'vivaldi'
+'vivaldi-ffmpeg-codecs'
+'obs-studio'
+'tomcat7'
+'nextcloud-client'
+'xfce4-terminal'
 )
 
 for PKG in "${PKGS[@]}"; do

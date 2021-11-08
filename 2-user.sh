@@ -27,7 +27,6 @@ PKGS=(
 'awesome-terminal-fonts'
 'brave-bin' # Brave Browser
 'dxvk-bin' # DXVK DirectX to Vulcan
-'github-desktop-bin' # Github Desktop sync
 'lightly-git'
 'lightlyshaders-git'
 'mangohud' # Gaming FPS Counter
@@ -49,6 +48,20 @@ PKGS=(
 'ttf-roboto'
 'zoom' # video conferences
 'snap-pac'
+'heroic-games-launcher-bin'
+'vscodium-bin'
+'vscodium-bin-features'
+'vscodium-bin-marketplace'
+'intellij-idea-ce'
+'android-studio'
+'eclipse-jee-bin'
+'lombok-eclipse-jee'
+'meta-group-texlive-most'
+'megasync-bin'
+'thunar-megasync-bin'
+'pnpm'
+'haruhi-dl'
+'thunar-vcs-plugin'
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -56,11 +69,11 @@ for PKG in "${PKGS[@]}"; do
 done
 
 export PATH=$PATH:~/.local/bin
-cp -r $HOME/ArchTitus/dotfiles/* $HOME/.config/
-pip install konsave
-konsave -i $HOME/ArchTitus/kde.knsv
-sleep 1
-konsave -a kde
+#cp -r $HOME/ArchTitus/dotfiles/* $HOME/.config/
+#pip install konsave
+#konsave -i $HOME/ArchTitus/kde.knsv
+#sleep 1
+#konsave -a kde
 
 echo -e "\nDone!\n"
 exit
