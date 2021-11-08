@@ -281,11 +281,11 @@ echo "username=$username" >> ${HOME}/ArchTitus/install.conf
 fi
 if [ $(whoami) = "root"  ];
 then
-    useradd -m -G wheel,libvirt -s /bin/bash $username 
+    useradd -m -G audio,video,uucp,users,docker,wheel,libvirt -s /bin/zsh $username 
 	passwd $username
 	cp -R /root/ArchTitus /home/$username/
     chown -R $username: /home/$username/ArchTitus
-	read -p "Please name your machine:" nameofmachine
+	read -p "Please name your machine: " nameofmachine
 	echo $nameofmachine > /etc/hostname
 	echo "127.0.1.1		${nameofmachine}.localdomain	${nameofmachine}" >> /etc/hosts
 else
